@@ -12,9 +12,10 @@ def add_todo():
 
 
 st.title("Todo App")
-#terminal: streamlit run C:\Users\maham\PycharmProjects\ArditSulce\To_Do\web_app.py
+#terminal: streamlit run C:\Users\maham\PycharmProjects\PythonProject\web_app1\web_app.py
 st.subheader("This is the Todo app")
-st.write("This app is to increase your productivity")
+st.write("This app is to increase your <b>productivity</b>.",
+         unsafe_allow_html=True)
 
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
@@ -31,3 +32,4 @@ st.text_input(label="Enter a todo:", placeholder="Add new todo...",
 
 #st.session_state
 #pip freeze > requirements.txt
+#https://pioneers-m85qskvk9vzfheanekjbcx.streamlit.app/
