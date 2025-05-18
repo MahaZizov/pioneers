@@ -1,17 +1,21 @@
+import os
 FILEPATH = "todos.txt"
 
 
 def get_todos(filepath = FILEPATH): #with a default parameter ("filepath")
     """ Read the text file and the return the list of
     to-do items."""
+    if not os.path.exists(filepath):
+        with open(filepath, 'w') as file:
+            pass
     with open(filepath, 'r') as file_local:  #Localize the variable in func
         todos = file_local.readlines()
     return todos
 
 def write_todos(todos_arg, filepath = FILEPATH): #non-default parameter before the default one
     """Writes the to-do item list in the text file."""
-    with open(filepath, 'w') as file: #alternatively you can explicitly mention the args below in each instance(no need to respect the order then)
-        file.writelines(todos_arg)
+    with open(filepath, 'w') as file_local: #alternatively you can explicitly mention the args below in each instance(no need to respect the order then)
+        file_local.writelines(todos_arg)
 
 
 if __name__ == "__main__":
